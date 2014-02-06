@@ -2,20 +2,20 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
 .marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-/* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20px;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -32,7 +32,7 @@ body {
 }
 
 /* Customize container */
-@media (min-width: 768px) {
+@media (min-width: 100%) {
   .container {
     max-width: 730px;
   }
@@ -60,7 +60,7 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 100%) {
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -76,4 +76,101 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.tasks, .task {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.taskLi {
+    margin-bottom: 15px;
+}
+
+.task {
+  padding: 15px;
+  font-size: 21px;
+  font-weight: 300;
+  color: #676D70;
+  background-color: #CCCFD3;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.task.complete {
+  color: #FFFFFF;
+  background-color: #4CCD66;
+  text-decoration: none;
+}
+
+.drawer-overlay {
+    position:absolute;
+    width:12%;
+    height:9%;
+}
+
+.task-drawer-button {
+  display:block;
+  height:100%;
+}
+
+.task-form input {
+  width: 100%;
+}
+
+.task-form {
+  margin: 0 0 20px 0;
+}
+
+.task-form input {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.nav-pills {
+  margin-top: 6px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background-color: #4092F8;
+}
+
+.nav-pills > li.warning > a, .nav-pills > li.warning > a:hover, .nav-pills > li.warning > a:focus {
+  background-color: #FA3B30;
+}
+
+.nav-pills > li.clear-all > a, .nav-pills > li.clear-all > a:hover, .nav-pills > li.clear-all > a:focus {
+  background-color: #555555;
+}
+
+.nav > li > a {
+  padding: 5px 10px;
+}
+
+.drawer {
+  padding: 15px;
+  background-color: #f0f0f0;
+}
+
+.drawer .delete, .drawer .edit {
+  color: #FFFFFF;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.drawer .delete {
+  background-color: #D53B2B;
+}
+
+.drawer .edit {
+  background-color: #555555;
+}
+
+.instruction {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 20px;
+  color: #4CCD66;
 }

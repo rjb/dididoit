@@ -1,36 +1,30 @@
 <div class="header">
   <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
+    <li class="active" ng-hide="showNewTaskForm"><a ng-click="openCloseNewTaskForm()">New</a></li>
+    <li class="active" ng-show="showNewTaskForm"><a ng-click="openCloseNewTaskForm()">Cancel</a></li>
   </ul>
-  <h3 class="text-muted">didi</h3>
+  <h3 class="text-muted"><img src="images/didi-logo.png"></h3>
 </div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
+<div class="task-form" ng-show="showNewTaskForm">
+  <form ng-submit="addTask()">
+    <input type="text" ng-model="newTask.desc" focus-here="{{showNewTaskForm}}" required/>
+  </form>
+  <div class="instruction" ng-show="tasks.length === 0">
+    <img src="images/up-arrow.png" width="25" height="43"> Enter something you need to track or remember to do everyday.
+  </div>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
-
-<div class="footer">
-  <p>♥ from the Yeoman team</p>
-</div>
+<ul class="tasks" ng-repeat="task in tasks">
+  <li class="taskLi">
+    <div class="drawer-overlay">
+      <div ng-hide="showDrawer" class="task-drawer-button"><a ng-click="openCloseDrawer(task)" class="task-drawer-button"></a></div>
+      <div ng-show="showDrawer" class="task-drawer-button"><a ng-click="openCloseDrawer(task)" class="task-drawer-button"></a></div>
+    </div>
+    <div class="task {{task.status}}" ng-click="changeStatus(task)">{{task.desc}}</div>
+    <div class="drawer" ng-show="task.showDrawer">
+      <a class="edit" ng-click="editTask(task)">Edit</a>
+      <a class="delete" ng-click="deleteTask(task)">Delete</a>
+    </div>
+  </li>
+</ul>
