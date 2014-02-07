@@ -78,6 +78,10 @@ body {
   }
 }
 
+.task, .taskLi, .nav-pills li, .drawer a {
+  cursor: pointer;
+}
+
 .tasks, .task {
   margin: 0;
   padding: 0;
@@ -99,7 +103,7 @@ body {
   text-decoration: none;
 }
 
-.task.complete {
+.task.completed {
   color: #FFFFFF;
   background-color: #4CCD66;
   text-decoration: none;
@@ -141,7 +145,8 @@ body {
   background-color: #FA3B30;
 }
 
-.nav-pills > li.clear-all > a, .nav-pills > li.clear-all > a:hover, .nav-pills > li.clear-all > a:focus {
+.nav-pills > li.inactive > a, .nav-pills > li.inactive > a:hover, .nav-pills > li.inactive > a:focus {
+  color: #FFFFFF;
   background-color: #555555;
 }
 
