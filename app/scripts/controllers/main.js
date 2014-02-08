@@ -147,10 +147,6 @@ angular.module('didiApp')
     	return false;
     };
 
-    $scope.tellMe = function(task) {
-    	alert(task.completed_at);
-    };
-
 	// Opens and closes the new task form
     $scope.openCloseNewTaskForm = function() {
     	$scope.showNewTaskForm = !$scope.showNewTaskForm;
