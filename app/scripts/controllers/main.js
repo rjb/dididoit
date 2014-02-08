@@ -111,8 +111,8 @@ angular.module('didiApp')
 
     // Deletes task from array and local storage
     $scope.deleteTask = function(task) { 	
- 		$scope.tasks.splice(task, 1);
-    	localStorageService.add('tasks', $scope.tasks);
+      $scope.tasks.splice([$scope.tasks.indexOf(task)], 1);
+      localStorageService.add('tasks', $scope.tasks);
     	forceOpenNewTaskForm();
     };
 
